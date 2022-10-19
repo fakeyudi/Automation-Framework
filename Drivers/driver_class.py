@@ -1,5 +1,8 @@
 from enum import Enum
 from selenium import webdriver
+from appium import webdriver
+from appium.options.android import UiAutomator2Options
+from Drivers.capabilities import AppDesiredCapabilities
 
 class platform(Enum):
     WEB = 1
@@ -11,11 +14,13 @@ class Driver():
         self.platform = platform
         self.driver = None
 
+    android_options = UiAutomator2Options().load_capabilities(AppDesiredCapabilities.android_desired_cap)
+
     def get_driver(self):
         if self.platform == platform.WEB:
             self.driver = webdriver.Chrome()
         elif self.platform == platform.ANDROID:
-            self.driver = webdriver.Remote()
+            self.driver = webdriver.Remote("http://hub.browserstack.com/wd/hub", options=self.android_options)
         elif self.platform == platform.iOS:
             self.driver = webdriver.Remote()
         return self.driver
