@@ -1,6 +1,6 @@
 from Pages.Web.base_page import BasePage
 from Resources.Web.locators import LoginModalLocators
-from Utils.common_methods import captureScreen
+from Utils.common_methods import CaptureScreen
 
 
 class LoginModal(BasePage):
@@ -15,7 +15,7 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            captureScreen(self.driver, "login_modal_title_error")
+            CaptureScreen.capture(self.driver, "login_modal_title_error")
 
     def verify_login_modal_close_button(self):
         try:
@@ -24,7 +24,7 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            captureScreen(self.driver, "login_modal_close_button_error")
+            CaptureScreen.capture(self.driver, "login_modal_close_button_error")
 
     def verify_login_modal_email_field(self):
         try:
@@ -33,7 +33,7 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            captureScreen(self.driver, "login_modal_email_field_error")
+            CaptureScreen.capture(self.driver, "login_modal_email_field_error")
 
     def verify_login_modal_password_field(self):
         try:
@@ -42,4 +42,4 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            captureScreen(self.driver, "login_modal_password_field_error")
+            CaptureScreen.capture(self.driver, "login_modal_password_field_error")

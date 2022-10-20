@@ -1,5 +1,24 @@
-from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
-def captureScreen(driver, filename):
-    """Captures a screenshot of the current page"""
-    driver.save_screenshot("Screenshots/"+filename+".png")
+class WaitForElement:
+    @staticmethod
+    def wait(driver, id, time_out=100):
+        try:
+            WebDriverWait(driver, time_out).until(
+                lambda driver: driver.find_element(*id))
+        except TimeoutException:
+            print('Not able to find ID:' + id)
+
+class CaptureScreen:
+    @staticmethod
+    def capture(driver, filename):
+        """Captures a screenshot of the current page"""
+        if driver.platform == 'WEB':
+            driver.save_screenshot("Screenshots/"+filename+".png")
+        else:
+            driver.get_screenshot_as_file("Screenshots/"+filename+".png")
+
+# def captureScreen(driver, filename):
+#     """Captures a screenshot of the current page"""
+#     driver.save_screenshot("Screenshots/"+filename+".png")
