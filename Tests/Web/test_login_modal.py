@@ -1,6 +1,4 @@
-from _pytest.fixtures import fixture
-
-from Tests.Web.base_test import WebBaseTest
+from Tests.base_test import WebBaseTest
 from Pages.Web.login_modal import LoginModal
 
 

@@ -16,3 +16,9 @@ class LanguagePage(BasePage):
             self.click(LanguagePageLocators.language_eng)
         except:
             CaptureScreen.capture(self.driver, "language_page_error")
+
+    def select_continue_button(self):
+        try:
+            self.click(LanguagePageLocators.language_continue_button)
+        except:
+            CaptureScreen.capture(self.driver, "language_page_continue_button_error")

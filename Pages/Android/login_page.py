@@ -8,11 +8,11 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def verify_login_feilds(self):
+    def verify_login_fields(self):
         try:
             WaitForElement.wait(self.driver, LoginPageLocators.login_button).is_displayed()
         except:
-            CaptureScreen.capture(self.driver, "login_page_error")
+            CaptureScreen.capture(self.driver, "login_page_fields_error")
 
     def select_cancel_login(self):
         try:

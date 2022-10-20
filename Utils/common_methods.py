@@ -15,9 +15,9 @@ class CaptureScreen:
     def capture(driver, filename):
         """Captures a screenshot of the current page"""
         if driver.platform == 'WEB':
-            driver.save_screenshot("Screenshots/"+filename+".png")
+            driver.save_screenshot("Screenshots/Web"+filename+".png")
         else:
-            driver.get_screenshot_as_file("Screenshots/"+filename+".png")
+            driver.get_screenshot_as_file("Screenshots/Android"+filename+".png")
 
 # def captureScreen(driver, filename):
 #     """Captures a screenshot of the current page"""
