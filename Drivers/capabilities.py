@@ -10,7 +10,7 @@ class AppDesiredCapabilities:
         'bstack:options': {
             "projectName": "Flipkart Automation",
             "buildName": "fk3.0",
-            "sessionName": "Test 3",
+            "sessionName": "Test 4",
             "appiumVersion": "1.18.0",
             "userName": "fakeyudi_G2oCF9",  # config('USER'),
             "accessKey": "CpfyyphpBjyypJC9Ptfe"  # config('KEY')
