@@ -12,9 +12,9 @@ class WaitForElement:
 
 class CaptureScreen:
     @staticmethod
-    def capture(driver, filename):
+    def capture(driver, filename, platform):
         """Captures a screenshot of the current page"""
-        if driver.platform == 'WEB':
+        if platform == 'WEB':
             driver.save_screenshot("Screenshots/Web"+filename+".png")
         else:
             driver.get_screenshot_as_file("Screenshots/Android"+filename+".png")

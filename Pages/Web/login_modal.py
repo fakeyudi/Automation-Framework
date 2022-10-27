@@ -15,7 +15,7 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            CaptureScreen.capture(self.driver, "login_modal_title_error")
+            CaptureScreen.capture(self.driver, "login_modal_title_error", 'WEB')
 
     def verify_login_modal_close_button(self):
         try:
@@ -24,7 +24,7 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            CaptureScreen.capture(self.driver, "login_modal_close_button_error")
+            CaptureScreen.capture(self.driver, "login_modal_close_button_error", 'WEB')
 
     def verify_login_modal_email_field(self):
         try:
@@ -33,7 +33,7 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            CaptureScreen.capture(self.driver, "login_modal_email_field_error")
+            CaptureScreen.capture(self.driver, "login_modal_email_field_error", 'WEB')
 
     def verify_login_modal_password_field(self):
         try:
@@ -42,4 +42,4 @@ class LoginModal(BasePage):
             else:
                 raise AssertionError
         except AssertionError:
-            CaptureScreen.capture(self.driver, "login_modal_password_field_error")
+            CaptureScreen.capture(self.driver, "login_modal_password_field_error", 'WEB')
